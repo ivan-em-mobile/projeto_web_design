@@ -1,86 +1,310 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alinhar_text_pict</title>
-    <!-- Titulo do site  -->
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-    <!-- colocar icone para exibir em navegador -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
-    <!-- link externo para uso de fonte -->
 
-    <style>
-      :root {
-        --cor-background: #35424a;
-        --cor-mq-top: #2f4858;
-        --cor-mq-botton: #6e4e8f;
-        --cor-menu: #e8491d;
-        --cor-menu-burger: #da2e5e;
-        --cor-texto: #f5f5f5;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alinhar_text_pict</title>
+  <!-- Titulo do site  -->
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  <!-- colocar icone para exibir em navegador -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <!-- link externo para uso de fonte -->
 
-      /* *Reset de Pagina */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-      }
+  <style>
+    :root {
+      --cor-background: #35424a;
+      --cor-mq-top: #2f4858;
+      --cor-mq-botton: #6e4e8f;
+      --cor-menu: #e8491d;
+      --cor-menu-burger: #da2e5e;
+      --cor-texto: #f5f5f5;
+    }
 
-      /* *Definir o tamanho da tela sempre forçando o não extender a tela */
-      html {
-        height: 100vh;
-      }
+    /* *Reset de Pagina */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-      /* Estilo geral */
+    /* *Definir o tamanho da tela sempre forçando o não extender a tela */
+    html {
+      height: 100vh;
+    }
+
+    /* Estilo geral */
+    body {
+      background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
+      background-repeat: no-repeat;
+      background-position: top;
+      background-attachment: scroll;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    /* Estilo do cabeçalho */
+    header {
+      /* background: #35424a; */
+      background: var(--cor-background);
+      color: var(--cor-texto);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header>h1 {
+      text-align: center;
+      color: whitesmoke;
+
+      text-shadow: #f5f5f5 1px 1px 10px;
+      margin-top: 17px;
+    }
+
+    /* Estilo do menu */
+    menu {
+      background: var(--cor-menu);
+      color: var(--cor-texto);
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    menu>ul {
+      list-style-type: none;
+    }
+
+    menu ul li a {
+      display: block;
+      /*padding: 7px;*/
+      text-align: center;
+      margin: auto;
+      color: var(--cor-texto);
+      text-decoration: none;
+    }
+
+    menu>ul>li>a:hover {
+      background-color: var(--cor-menu-burger);
+      color: whitesmoke;
+      text-decoration: none;
+    }
+
+    #burger {
+      background: var(--cor-menu);
+      display: block;
+      color: var(--cor-texto);
+      text-align: center;
+      margin: auto;
+      padding: 7px;
+      cursor: pointer;
+      /* width: 90vw; */
+    }
+
+    #burger:hover {
+      background-color: #da2e5e;
+    }
+
+    /* Estilo do conteúdo principal */
+    main {
+      padding: 20px;
+      background: #ffffff;
+      margin: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #0000001a;
+      text-align: justify;
+    }
+
+    /* Estilo do artigo */
+    article {
+      margin-bottom: 20px;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      max-width: 200px;
+    }
+
+    /* Estilo do rodapé */
+    footer {
+      background: var(--cor-background);
+      color: var(--cor-texto);
+      text-align: center;
+      position: relative;
+      padding: 10px 0;
+      bottom: 0;
+
+    }
+
+    /* media para tablet com  largura de tela menor que 768px para o maior de 992px
+            onde sera modificado as medidas do menu, menu lista, main > article onde o menu
+            deve estar bloqueado seguindo as margens e cor de fundo dos elementos e
+            deixando assim o menu burger oculto, forçando assim o menu aparecendo inline-block
+            (na horizontal) e sua exibição de imagens */
+
+    @media screen and (min-width: 768px) and (max-width: 992px) {
       body {
+        /* background-image: url("../back-tablet.jpg"); */
         background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
         background-repeat: no-repeat;
         background-position: top;
         background-attachment: scroll;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
       }
 
-      /* Estilo do cabeçalho */
-      header {
-        /* background: #35424a; */
-        background: var(--cor-background);
-        color: var(--cor-texto);
-        padding: 20px 0;
-        text-align: center;
+      #burger {
+        display: none;
       }
 
-      header > h1 {
-        text-align: center;
-        color: whitesmoke;
-
-        text-shadow: #f5f5f5 1px 1px 10px;
-        margin-top: 17px;
-      }
-
-      /* Estilo do menu */
       menu {
+        display: block;
+        /* width: 90vw; */
+        margin: auto;
+        /* background: #e8491d; */
         background: var(--cor-menu);
+        /* color: whitesmoke; */
         color: var(--cor-texto);
         padding: 10px 0;
         text-align: center;
       }
 
-      menu ul {
-        list-style: none;
-        padding: 0;
+      menu>ul>li {
+        display: inline-block;
+        background-color: var(--cor-menu);
       }
 
-      menu > ul {
-        list-style-type: none;
+      main {
+        width: 90vw;
+        margin: auto;
+      }
+
+      article>h2 {
+        padding-bottom: 17px;
+        width: 90vw;
+        margin: auto;
+      }
+
+      article>p {
+        text-align: justify;
+        margin-bottom: 17px;
+        text-indent: 17px;
+      }
+
+      footer {
+        background: var(--cor-background);
+        color: var(--cor-texto);
+        text-align: center;
+        position: relative;
+        padding: 10px 0;
+        bottom: 0;
+      }
+
+    }
+
+    /* media para pc com  largura de tela menor que 992px para o maior de 1200px
+                    onde sera modificado as medidas do menu, menu lista, main > article onde o menu
+                    deve estar bloqueado seguindo as margens e cor de fundo dos elementos e
+                    deixando assim o menu burger oculto, forçando assim o menu aparecendo inline-block
+                    (na horizontal) e sua exibição de imagens */
+
+    @media screen and (min-width: 993px) and (max-width: 1200px) {
+      body {
+        background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: scroll;
+      }
+
+      #burger {
+        display: none;
+      }
+
+      menu {
+        display: block;
+        /* width: 90vw; */
+        margin: auto;
+        /* background: #e8491d; */
+        background: var(--cor-menu);
+        /* color: whitesmoke; */
+        color: var(--cor-texto);
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      menu>ul>li {
+        display: inline-block;
+        background-color: var(--cor-menu);
+      }
+
+      main {
+        width: 90vw;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      img {
+        margin: 10px;
+      }
+
+      article>h2 {
+        padding-bottom: 17px;
+      }
+
+      article>p {
+        text-align: justify;
+        margin-bottom: 17px;
+        text-indent: 17px;
+      }
+
+      footer {
+        background: var(--cor-background);
+        color: var(--cor-texto);
+        text-align: center;
+        position: relative;
+        padding: 10px 0;
+        bottom: 0;
+      }
+
+
+    }
+
+    /* media para smart_tv com  largura de tela menor que 992px para o maior de 1200px
+                    onde sera modificado as medidas do menu, menu lista, main > article onde o menu
+                    deve estar bloqueado seguindo as margens e cor de fundo dos elementos e
+                    deixando assim o menu burger oculto, forçando assim o menu aparecendo inline-block
+                    (na horizontal) e sua exibição de imagens */
+
+    @media screen and (min-width: 1201px) {
+      body {
+        background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: scroll;
+      }
+
+      #burger {
+        display: none;
+      }
+
+      menu {
+        display: block;
+        /* width: 90vw; */
+        margin: auto;
+        /* background: #e8491d; */
+        background: var(--cor-menu);
+        /* color: whitesmoke; */
+        color: var(--cor-texto);
+        padding: 10px 0;
+        text-align: center;
       }
 
       menu ul li a {
@@ -92,49 +316,38 @@
         text-decoration: none;
       }
 
-      menu > ul > li > a:hover {
-        background-color: var(--cor-menu-burger);
+      menu>ul>li>a:hover {
         color: whitesmoke;
         text-decoration: none;
       }
 
-      #burger {
-        background: var(--cor-menu);
-        display: block;
-        color: var(--cor-texto);
-        text-align: center;
-        margin: auto;
-        padding: 7px;
-        cursor: pointer;
-        /* width: 90vw; */
+      menu>ul>li {
+        display: inline-block;
+        /*      background-color: var(--cor-menu);*/
       }
 
-      #burger:hover {
-        background-color: #da2e5e;
-      }
-
-      /* Estilo do conteúdo principal */
       main {
-        padding: 20px;
-        background: #ffffff;
-        margin: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px #0000001a;
-        text-align: justify;
-      }
-
-      /* Estilo do artigo */
-      article {
-        margin-bottom: 20px;
+        width: 90vw;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
       }
 
       img {
-        display: block;
-        margin: auto;
-        max-width: 200px;
+        margin: 10px;
       }
 
-      /* Estilo do rodapé */
+      article>h2 {
+        padding-bottom: 17px;
+      }
+
+      article>p {
+        text-align: justify;
+        margin-bottom: 17px;
+        text-indent: 17px;
+      }
+
       footer {
         background: var(--cor-background);
         color: var(--cor-texto);
@@ -142,274 +355,65 @@
         position: relative;
         padding: 10px 0;
         bottom: 0;
-
       }
 
-      /* media para tablet com  largura de tela menor que 768px para o maior de 992px
-            onde sera modificado as medidas do menu, menu lista, main > article onde o menu
-            deve estar bloqueado seguindo as margens e cor de fundo dos elementos e
-            deixando assim o menu burger oculto, forçando assim o menu aparecendo inline-block
-            (na horizontal) e sua exibição de imagens */
 
-      @media screen and (min-width: 768px) and (max-width: 992px) {
-        body {
-          /* background-image: url("../back-tablet.jpg"); */
-          background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
-          background-repeat: no-repeat;
-          background-position: top;
-          background-attachment: scroll;
-        }
+    }
+  </style>
+</head>
 
-        #burger {
-          display: none;
-        }
+<body onresize="mudouTamanho()">
+  <!-- Em uma determinada possição de tela será necessario reduzir os elementos -->
 
-        menu {
-          display: block;
-          /* width: 90vw; */
-          margin: auto;
-          /* background: #e8491d; */
-          background: var(--cor-menu);
-          /* color: whitesmoke; */
-          color: var(--cor-texto);
-          padding: 10px 0;
-          text-align: center;
-        }
+  <header>
+    <h1>Align Text and Picture</h1>
+  </header>
 
-        menu > ul > li {
-          display: inline-block;
-          background-color: var(--cor-menu);
-        }
+  <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">
+    menu
+  </span>
+  <!-- Exibir o menu em burger -->
 
-        main {
-          width: 90vw;
-          margin: auto;
-        }
+  <menu id="itens">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portifolioorkut.html">Manhã-Marcella</a></li>
+      <li><a href="github.html">Manhã-Lais</a></li>
+      <li><a href="snake.html">Manhã-Juliane</a></li>
+      <li><a href="textandpicture.html">Manhã-Jovens</a></li>
+      <li><a href="textandpicture.html">Manhã-Jovens</a></li>
+      <li><a href="textandpicture.html">Manhã-Jovens</a></li>
+      <li><a href="textandpicture.html">Manhã-Jovens</a></li>
+      <li><a href="textandpicture.html">Manhã-Jovens</a></li>
+    </ul>
+  </menu>
+  <main>
+    <img src="./3clean_code_img.png" alt="Align Text and Picture" />
 
-        article > h2 {
-          padding-bottom: 17px;
-          width: 90vw;
-          margin: auto;
-        }
+    <article>
+      Pagina 01 - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
+      temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
+      maxime vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
+      temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
+      maxime vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
+      temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
+      maxime vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
+      temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
+      maxime vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
+      temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
+      maxime vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
+      temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
+      maxime vero.
+    </article>
+  </main>
+  <footer>#Alinhamento de texto - @_ivanpaulino</footer>
+</body>
+<script src="script.js"></script>
 
-        article > p {
-          text-align: justify;
-          margin-bottom: 17px;
-          text-indent: 17px;
-        }
-
-        footer {
-          background: var(--cor-background);
-          color: var(--cor-texto);
-          text-align: center;
-          position: relative;
-          padding: 10px 0;
-          bottom: 0;
-        }
-
-      }
-
-      /* media para pc com  largura de tela menor que 992px para o maior de 1200px
-                    onde sera modificado as medidas do menu, menu lista, main > article onde o menu
-                    deve estar bloqueado seguindo as margens e cor de fundo dos elementos e
-                    deixando assim o menu burger oculto, forçando assim o menu aparecendo inline-block
-                    (na horizontal) e sua exibição de imagens */
-
-      @media screen and (min-width: 993px) and (max-width: 1200px) {
-        body {
-          background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
-          background-repeat: no-repeat;
-          background-position: top;
-          background-attachment: scroll;
-        }
-
-        #burger {
-          display: none;
-        }
-
-        menu {
-          display: block;
-          /* width: 90vw; */
-          margin: auto;
-          /* background: #e8491d; */
-          background: var(--cor-menu);
-          /* color: whitesmoke; */
-          color: var(--cor-texto);
-          padding: 10px 0;
-          text-align: center;
-        }
-
-        menu > ul > li {
-          display: inline-block;
-          background-color: var(--cor-menu);
-        }
-
-        main {
-          width: 90vw;
-          margin: auto;
-          display: flex;
-          align-items: center;
-          flex-direction: row;
-        }
-
-        img{
-          margin: 10px;
-        }
-
-        article > h2 {
-          padding-bottom: 17px;
-        }
-
-        article > p {
-          text-align: justify;
-          margin-bottom: 17px;
-          text-indent: 17px;
-        }
-
-        footer {
-          background: var(--cor-background);
-          color: var(--cor-texto);
-          text-align: center;
-          position: relative;
-          padding: 10px 0;
-          bottom: 0;
-        }
-
-
-      }
-
-      /* media para smart_tv com  largura de tela menor que 992px para o maior de 1200px
-                    onde sera modificado as medidas do menu, menu lista, main > article onde o menu
-                    deve estar bloqueado seguindo as margens e cor de fundo dos elementos e
-                    deixando assim o menu burger oculto, forçando assim o menu aparecendo inline-block
-                    (na horizontal) e sua exibição de imagens */
-
-      @media screen and (min-width: 1201px) {
-        body {
-          background-image: linear-gradient(to bottom, #2f4858, #6e4e8f);
-          background-repeat: no-repeat;
-          background-position: top;
-          background-attachment: scroll;
-        }
-
-        #burger {
-          display: none;
-        }
-
-        menu {
-          display: block;
-          /* width: 90vw; */
-          margin: auto;
-          /* background: #e8491d; */
-          background: var(--cor-menu);
-          /* color: whitesmoke; */
-          color: var(--cor-texto);
-          padding: 10px 0;
-          text-align: center;
-        }
-
-        menu ul li a {
-          display: block;
-          /*padding: 7px;*/
-          text-align: center;
-          margin: auto;
-          color: var(--cor-texto);
-          text-decoration: none;
-        }
-
-        menu > ul > li > a:hover {
-          color: whitesmoke;
-          text-decoration: none;
-        }
-
-        menu > ul > li {
-          display: inline-block;
-          /*      background-color: var(--cor-menu);*/
-        }
-
-        main {
-          width: 90vw;
-          margin: auto;
-          display: flex;
-          align-items: center;
-          flex-direction: row;
-        }
-
-        img{
-          margin: 10px;
-        }
-        
-        article > h2 {
-          padding-bottom: 17px;
-        }
-
-        article > p {
-          text-align: justify;
-          margin-bottom: 17px;
-          text-indent: 17px;
-        }
-
-        footer {
-          background: var(--cor-background);
-          color: var(--cor-texto);
-          text-align: center;
-          position: relative;
-          padding: 10px 0;
-          bottom: 0;
-        }
-
-
-      }
-    </style>
-  </head>
-
-  <body onresize="mudouTamanho()">
-    <!-- Em uma determinada possição de tela será necessario reduzir os elementos -->
-
-    <header>
-      <h1>Align Text and Picture</h1>
-    </header>
-
-    <span id="burger" class="material-symbols-outlined" onclick="clickMenu()">
-      menu
-    </span>
-    <!-- Exibir o menu em burger -->
-
-    <menu id="itens">
-      <ul>
-        <li><a href="index.html">Home</a></li>        
-        <li><a href="portifolioorkut.html">Manhã-Marcella</a></li>
-        <li><a href="github.html">Manhã-Lais</a></li>
-        <li><a href="snake.html">Manhã-Juliane</a></li>
-
-      </ul>
-    </menu>
-    <main>
-      <img src="./3clean_code_img.png" alt="Align Text and Picture" />
-
-      <article>
-        Pagina 01 - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
-        temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
-        maxime vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
-        temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
-        maxime vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
-        temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
-        maxime vero. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
-        temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
-        maxime vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
-        temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
-        maxime vero.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Deserunt distinctio earum eius id explicabo, ab, eos placeat quaerat sit
-        temporibus, incidunt aspernatur quos iure omnis molestiae eligendi quam
-        maxime vero.
-      </article>
-    </main>
-    <footer>#Alinhamento de texto - @_ivanpaulino</footer>
-  </body>
-  <script src="script.js"></script>
 </html>
